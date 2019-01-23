@@ -1,0 +1,11 @@
+1	戴相龙	_	NR	NR	_	2	VMOD	_	_
+2	说	_	VV	VV	_	0	ROOT	_	_
+3	中国	_	NR	NR	_	5	NMOD	_	_
+4	经济	_	NN	NN	_	5	NMOD	_	_
+5	发展	_	NN	NN	_	8	SUB	_	_
+6	为	_	P	P	_	8	VMOD	_	_
+7	亚洲	_	NR	NR	_	6	PMOD	_	_
+8	作出	_	VV	VV	_	2	VMOD	_	_
+9	积极	_	JJ	JJ	_	10	NMOD	_	_
+10	贡献	_	NN	NN	_	8	OBJ	_	_
+
