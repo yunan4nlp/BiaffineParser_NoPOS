@@ -50,7 +50,7 @@ def train(data, dev_data, test_data, parser, vocab, config):
 
             batch_iter += 1
             if batch_iter % config.update_every == 0 or batch_iter == batch_num:
-                nn.utils.clip_grad_norm(filter(lambda p: p.requires_grad, parser.model.parameters()), \
+                nn.utils.clip_grad_norm_(filter(lambda p: p.requires_grad, parser.model.parameters()), \
                                         max_norm=config.clip)
                 optimizer.step()
                 parser.model.zero_grad()       
