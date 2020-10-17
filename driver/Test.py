@@ -1,12 +1,9 @@
 import sys
 sys.path.extend(["../../","../","./"])
 import time
-import numpy as np
-import pickle
-import argparse
-from driver.Config import *
-from driver.Model import *
-from driver.Parser import *
+from data.Config import *
+from modules.Model import *
+from modules.Parser import *
 from data.Dataloader import *
 import pickle
 import random

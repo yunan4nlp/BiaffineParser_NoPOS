@@ -2,17 +2,13 @@ import sys
 sys.path.extend(["../","./"])
 import time
 import torch.optim.lr_scheduler
-import torch.nn as nn
 import random
-import argparse
-from driver.Config import *
-from driver.Model import *
-from driver.Parser import *
+from data.Config import *
+from modules.Model import *
+from modules.Parser import *
 from data.Dataloader import *
 import pickle
-import os
-import re
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+
 
 def train(data, dev_data, test_data, parser, vocab, config):
     optimizer = Optimizer(filter(lambda p: p.requires_grad, parser.model.parameters()), config)
@@ -68,8 +64,8 @@ def train(data, dev_data, test_data, parser, vocab, config):
                 if dev_uas > best_UAS:
                     print("Exceed best uas: history = %.2f, current = %.2f" %(best_UAS, dev_uas))
                     best_UAS = dev_uas
-                    if config.save_after > 0 and iter > config.save_after:
-                        torch.save(parser.model.state_dict(), config.save_model_path)
+                    if config.save_after >= 0 and iter >= config.save_after:
+                        torch.save(parser.model.state_dict(), config.save_model_path + '.' + str(global_step))
 
 
 def evaluate(data, parser, vocab, outputFile):
